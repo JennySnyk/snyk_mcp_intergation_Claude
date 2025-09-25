@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "snyk": {
+      "command": "snyk",
+      "args": ["mcp", "-t", "stdio"],
+      "env": {
+        "SNYK_TOKEN": "YOUR_SNYK_API_TOKEN_HERE",
+        "SNYK_ORG": "your-organization-id",
+        "SNYK_LOG_LEVEL": "info",
+        "SNYK_SEVERITY_THRESHOLD": "medium",
+        "SNYK_CFG_DISABLE_ANALYTICS": "false"
+      }
+    }
+  }
+}

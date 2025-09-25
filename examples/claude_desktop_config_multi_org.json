@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "snyk-personal": {
+      "command": "snyk",
+      "args": ["mcp", "-t", "stdio"],
+      "env": {
+        "SNYK_TOKEN": "YOUR_PERSONAL_SNYK_TOKEN",
+        "SNYK_ORG": "your-personal-org-id"
+      }
+    },
+    "snyk-work": {
+      "command": "snyk",
+      "args": ["mcp", "-t", "stdio"],
+      "env": {
+        "SNYK_TOKEN": "YOUR_WORK_SNYK_TOKEN",
+        "SNYK_ORG": "your-work-org-id",
+        "SNYK_SEVERITY_THRESHOLD": "high"
+      }
+    }
+  }
+}
