@@ -1,6 +1,8 @@
-# Quick Start Guide: Snyk MCP Server with Claude Desktop
+# Quick Start Guide: Snyk MCP Server with Claude Desktop & Claude Code
 
-Get up and running with Snyk security scanning in Claude Desktop in just a few minutes!
+Get up and running with Snyk security scanning in **Claude Desktop and Claude Code** in just a few minutes!
+
+> **Works with both**: This setup is compatible with Claude Desktop (standalone app) and Claude Code (VS Code extension).
 
 ## 🚀 One-Command Setup (macOS/Linux)
 
@@ -38,12 +40,14 @@ npm install -g snyk
 snyk auth
 ```
 
-### Step 3: Configure Claude Desktop
+### Step 3: Configure Claude Desktop/Claude Code
 
-Copy the basic configuration to your Claude Desktop config file:
+Copy the basic configuration to your Claude configuration file:
 
 **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+
+> **Note**: Both Claude Desktop and Claude Code use the same configuration file.
 
 ```json
 {
@@ -63,7 +67,7 @@ Get your API token from: https://app.snyk.io/account
 
 ## ✅ Test Your Setup
 
-1. **Restart Claude Desktop**
+1. **Restart Claude Desktop or reload VS Code (for Claude Code)**
 2. **Open a new conversation**
 3. **Ask Claude:**
    ```

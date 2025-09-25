@@ -1,6 +1,8 @@
-# Snyk MCP Server with Claude Desktop - Project Overview
+# Snyk MCP Server with Claude Desktop & Claude Code - Project Overview
 
-This project provides a complete setup guide and automation tools for integrating Snyk security scanning with Claude Desktop using the Model Context Protocol (MCP).
+This project provides a complete setup guide and automation tools for integrating Snyk security scanning with **both Claude Desktop and Claude Code** using the Model Context Protocol (MCP).
+
+> **Universal Compatibility**: This setup works seamlessly with both Claude Desktop (standalone application) and Claude Code (VS Code extension). Both applications share the same MCP configuration system.
 
 ## 📁 Project Structure
 
@@ -58,13 +60,19 @@ python3 scripts/setup_claude_config.py
 4. Restart Claude Desktop
 
 ### Option 3: Desktop Extensions (If Available)
+**Claude Desktop:**
 1. Open Claude Desktop → Settings → Extensions
 2. Install Snyk extension from directory
 3. Configure API token
 
+**Claude Code:**
+1. Open VS Code with Claude Code extension
+2. Use Command Palette → "Claude: Configure MCP Servers"
+3. Configure Snyk server as needed
+
 ## 🔧 Available Snyk Tools in Claude
 
-Once configured, Claude Desktop will have access to these Snyk security tools:
+Once configured, both Claude Desktop and Claude Code will have access to these Snyk security tools:
 
 | Tool | Purpose | Example Usage |
 |------|---------|---------------|

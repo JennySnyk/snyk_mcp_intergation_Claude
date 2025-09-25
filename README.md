@@ -1,6 +1,8 @@
-# Setting up Snyk MCP Server with Claude Desktop
+# Setting up Snyk MCP Server with Claude Desktop & Claude Code
 
-This guide will walk you through setting up the Snyk MCP (Model Context Protocol) server to work with Claude Desktop, enabling AI-powered security scanning directly in your conversations with Claude.
+This guide will walk you through setting up the Snyk MCP (Model Context Protocol) server to work with **both Claude Desktop and Claude Code**, enabling AI-powered security scanning directly in your conversations with Claude.
+
+> **Note**: This setup works for both Claude Desktop (the standalone chat application) and Claude Code (the VS Code extension). The configuration process is identical for both applications.
 
 ## What is Snyk MCP Server?
 
@@ -10,7 +12,7 @@ The Snyk MCP server integrates Snyk's security scanning capabilities into AI wor
 
 Before you begin, ensure you have:
 
-1. **Claude Desktop** installed on your system
+1. **Claude Desktop** and/or **Claude Code** (VS Code extension) installed on your system
 2. **Snyk CLI v1.1298.0 or later** 
 3. **A Snyk account** (free or paid)
 4. **Node.js** (for some dependency scanning features)
@@ -63,23 +65,35 @@ You should see version 1.1298.0 or later.
    snyk auth --check
    ```
 
-## Step 3: Configure Claude Desktop for Snyk MCP
+## Step 3: Configure Claude Desktop/Claude Code for Snyk MCP
 
 ### Option A: Using Desktop Extensions (Recommended)
 
+**For Claude Desktop:**
 1. **Open Claude Desktop**
 2. **Navigate to Settings > Extensions**
 3. **Look for Snyk in the extensions directory**
    - If available, click "Install" and follow the prompts
    - Configure your Snyk API token when prompted
 
+**For Claude Code (VS Code Extension):**
+1. **Open VS Code with Claude Code extension**
+2. **Open Command Palette** (`Cmd+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux)
+3. **Search for "Claude: Configure MCP Servers"**
+4. **Look for Snyk in the available servers** and configure as needed
+
 ### Option B: Manual Configuration
 
 If the Snyk extension isn't available in the directory, you can configure it manually:
 
-1. **Locate Claude Desktop config file:**
+1. **Locate the configuration file:**
+
+   **For Claude Desktop:**
    - **macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
    - **Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
+   
+   **For Claude Code:**
+   - Use the same configuration file as Claude Desktop (they share the same MCP configuration)
 
 2. **Create or edit the configuration file:**
 
@@ -99,11 +113,11 @@ If the Snyk extension isn't available in the directory, you can configure it man
 
 3. **Replace `YOUR_SNYK_API_TOKEN`** with your actual Snyk API token
 
-4. **Restart Claude Desktop**
+4. **Restart Claude Desktop or reload Claude Code in VS Code**
 
 ## Step 4: Verify the Setup
 
-1. **Open a new conversation in Claude Desktop**
+1. **Open a new conversation in Claude Desktop or start a chat in Claude Code**
 2. **Look for the Snyk tools** in the available tools list (usually shown with a 🔧 icon)
 3. **Test the connection** by asking Claude to check the Snyk authentication status
 
@@ -159,14 +173,14 @@ Review my Terraform files in ./infrastructure for security misconfigurations
 
 2. **"Command not found" error:**
    - Ensure Snyk CLI is properly installed and in your PATH
-   - Restart your terminal/Claude Desktop after installation
+   - Restart your terminal/Claude Desktop/VS Code after installation
 
 3. **"Permission denied" errors:**
    - Use `snyk trust /path/to/project` to trust the project directory
    - Ensure you have read permissions for the files being scanned
 
 4. **MCP server not starting:**
-   - Check the Claude Desktop logs for error messages
+   - Check the Claude Desktop logs or VS Code developer console for error messages
    - Verify the configuration file syntax is correct
    - Ensure the Snyk CLI version is 1.1298.0 or later
 
